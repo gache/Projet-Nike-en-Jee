@@ -17,9 +17,7 @@ public class IndexServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-//		request.setAttribute("template", "video");
-		
+
 //		List<Article> articles = new ArrayList<>(Arrays.asList(
 //				new Article("img/image01.jpg", "Nike Rise 365 Blue Ribbon Sports", " Haut de running pour Homme"),
 //				new Article("img/image02.jpg", "Nike Rise 365 Blue Ribbon Sports", " Haut de running pour Homme"),

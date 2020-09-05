@@ -4,7 +4,7 @@
 <section id="video">
 
 	<figure>
-		<video src="${ pageContext.request.contextPath }asets/videos/Nike_Joyride_Behind_the_Design_Nike.mp4" controls>
+		<video src="${ pageContext.request.contextPath }/assets/videos/video1.mp4" controls>
 		</video>
 	</figure>
 	

@@ -8,6 +8,9 @@ body {
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
+    font-family:"Oxygen", san-serif;
+    padding-bottom:50px;
+    font-size:20px;
 }
 
 body div.container {
