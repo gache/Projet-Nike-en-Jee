@@ -1,16 +1,14 @@
 package com.formation.tp_03_septembre.models;
 
-
-
 public class User {
-	
+
 	private String nom = "";
 	private String prenom = "";
 	private String email = "";
 	private String mdp = "";
-	
+
 	public User(String nom, String prenom, String email, String mdp) {
-	
+
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
@@ -48,35 +46,26 @@ public class User {
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
-	
-	
-	public boolean isIfNotEmpty() {
-		if (this.nom.isEmpty()) return false; 
-		if (this.prenom.isEmpty()) return false; 
-		if (this.email.isEmpty()) return false; 
-		if (this.mdp.isEmpty()) return false; 
-		 return true;	
-		}
-	
+
+	// methode pour savoir si les cases son vide ou pas
+
+	public boolean isNotEmpty() {
+		if (this.nom.isEmpty())
+			return false;
+		if (this.prenom.isEmpty())
+			return false;
+		if (this.email.isEmpty())
+			return false;
+		if (this.mdp.isEmpty())
+			return false;
+		return true;
+	}
+
 	public String forFile() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(this.nom)
-		.append(";")
-		.append(this.prenom)
-		.append(";")
-		.append(this.email)
-		.append(";")
-		.append(this.mdp)
-		.append("\n");
+		sb.append(this.nom).append(";").append(this.prenom).append(";").append(this.email).append(";").append(this.mdp)
+				.append("\n");
 		return sb.toString();
 	}
-	
-	
-	
-	
-		
-	}
-	
-	
 
-
+}

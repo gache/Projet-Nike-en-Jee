@@ -27,6 +27,7 @@ public class InscriptionServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String nom = request.getParameter("nom");
 		String prenom = request.getParameter("prenom");
 		String email = request.getParameter("email");
@@ -34,7 +35,7 @@ public class InscriptionServlet extends HttpServlet {
 
 		User user = new User(nom, prenom, email, mdp);
 
-		if (user.isIfNotEmpty()) {
+		if (user.isNotEmpty()) {
 			this.writeUserInFile(user);
 			response.sendRedirect(request.getContextPath() + "/");
 
@@ -44,18 +45,18 @@ public class InscriptionServlet extends HttpServlet {
 		}
 
 	}
-	
-	 
+
 	private void writeUserInFile(User user) {
-		try(BufferedWriter bw = new BufferedWriter( new FileWriter("./user", true))) {
-		System.out.println(user.forFile());
+
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("./user", true))) {
+			System.out.println(user.forFile());
 			bw.write(user.forFile());
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 	private void readUserFile(User user) {
 		try(BufferedReader br = new BufferedReader( new FileReader("./user", true))) {
 		String line = "";
@@ -68,6 +69,5 @@ public class InscriptionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
 
 }
