@@ -13,6 +13,11 @@
 	<div class="container">
 	
 		<c:import url="layouts/menu.jsp" />
+		
+		
+		<c:if test="${ not empty user }">
+		<h3>Bienvenue ${ user.prenom }</h3>
+		</c:if>
 
 		<c:if test="${ not empty template }">
 		<c:import url="pages/${ template }.jsp" />

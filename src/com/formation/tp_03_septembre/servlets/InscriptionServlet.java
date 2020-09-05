@@ -1,8 +1,7 @@
 package com.formation.tp_03_septembre.servlets;
 
-import java.io.BufferedReader;
+
 import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -34,21 +33,20 @@ public class InscriptionServlet extends HttpServlet {
 		String mdp = request.getParameter("mpd");
 
 		User user = new User(nom, prenom, email, mdp);
-
+		
 		if (user.isNotEmpty()) {
 			this.writeUserInFile(user);
 			response.sendRedirect(request.getContextPath() + "/");
-
-		} else {
-			request.setAttribute("user", user); // ça evite que l'utilisateur perd l'info du formulaire
-			doGet(request, response);
+		}else {
+			request.setAttribute("user",user); // ça evite que l'utilisateur perd l'info du formulaire
+			doGet(request, response);			
 		}
 
 	}
 
 	private void writeUserInFile(User user) {
 
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter("./user", true))) {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("/Users/erickfranco/eclipse-workspace/Tp_Jee_03_Septembre/user", true))) {
 			System.out.println(user.forFile());
 			bw.write(user.forFile());
 
@@ -56,18 +54,7 @@ public class InscriptionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
-	private void readUserFile(User user) {
-		try(BufferedReader br = new BufferedReader( new FileReader("./user", true))) {
-		String line = "";
-			while (line = br.readLine()) != null) {
-			
-		}
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	
+	
 
 }

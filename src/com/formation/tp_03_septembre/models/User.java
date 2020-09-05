@@ -14,6 +14,10 @@ public class User {
 		this.email = email;
 		this.mdp = mdp;
 	}
+	public User( String email, String mdp) {
+		this.email = email;
+		this.mdp = mdp;
+	}
 
 	public String getNom() {
 		return nom;
@@ -50,14 +54,10 @@ public class User {
 	// methode pour savoir si les cases son vide ou pas
 
 	public boolean isNotEmpty() {
-		if (this.nom.isEmpty())
-			return false;
-		if (this.prenom.isEmpty())
-			return false;
-		if (this.email.isEmpty())
-			return false;
-		if (this.mdp.isEmpty())
-			return false;
+		if (this.nom.isEmpty()) return false;
+		if (this.prenom.isEmpty())return false;
+		if (this.email.isEmpty())return false;
+		if (this.mdp.isEmpty())return false;
 		return true;
 	}
 
@@ -66,6 +66,14 @@ public class User {
 		sb.append(this.nom).append(";").append(this.prenom).append(";").append(this.email).append(";").append(this.mdp)
 				.append("\n");
 		return sb.toString();
+	}
+	public User toUser(String str) {
+		String[] tab = str.split(";");
+		this.nom = tab [0];
+		this.prenom = tab [1];
+		this.email = tab [2];
+		this.mdp = tab [3];
+ 		return this;
 	}
 
 }

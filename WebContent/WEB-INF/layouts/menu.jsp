@@ -7,6 +7,7 @@
 			<li><a href="${ pageContext.request.contextPath }/video">Video</a></li>
 			<li><a href="${ pageContext.request.contextPath }/articles">Articles</a></li>
 			<li><a href="${ pageContext.request.contextPath }/inscription">Inscription</a></li>
+			<li><a href="${ pageContext.request.contextPath }/login">Login</a></li>
 		</ul>
 	</nav>
 </header>
