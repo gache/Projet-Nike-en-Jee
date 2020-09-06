@@ -5,22 +5,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${ pageContext.request.contextPath }/assets/css/style.css">
-<title> Nike - Index </title>
+<link
+	href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="${ pageContext.request.contextPath }/assets/css/style.css">
+<title>Nike - Index</title>
 </head>
 <body>
 	<div class="container">
-	
+
 		<c:import url="layouts/menu.jsp" />
-		
-		
+
+
 		<c:if test="${ not empty user }">
-		<h3>Bienvenue ${ user.prenom }</h3>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h3>Bienvenue ${ user.prenom }</h3>
 		</c:if>
 
 		<c:if test="${ not empty template }">
-		<c:import url="pages/${ template }.jsp" />
+			<c:import url="pages/${ template }.jsp" />
 		</c:if>
 
 

@@ -28,11 +28,11 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String email = request.getParameter("email");
-		String mdp = request.getParameter("mpd");
+		String mdp = request.getParameter("mdp");
 
 		User user = new User(email, mdp);
 
-		if (user.getEmail().isBlank() && user.getMdp().isBlank()) {
+		if (!user.getEmail().isBlank() && !user.getMdp().isBlank()) {
 			if ((readUserFile(user)) != null) {
 				request.getSession().setAttribute("user", user);
 				response.sendRedirect(request.getContextPath() + "/");

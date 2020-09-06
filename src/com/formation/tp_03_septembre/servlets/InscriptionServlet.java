@@ -30,7 +30,7 @@ public class InscriptionServlet extends HttpServlet {
 		String nom = request.getParameter("nom");
 		String prenom = request.getParameter("prenom");
 		String email = request.getParameter("email");
-		String mdp = request.getParameter("mpd");
+		String mdp = request.getParameter("mdp");
 
 		User user = new User(nom, prenom, email, mdp);
 		
